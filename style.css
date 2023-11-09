@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
+
+
 * {
     padding: 0;
     margin: 0;
@@ -10,46 +12,50 @@ body{
     font-family: 'poppins', sans-serif;
     width: 100%;
     height: 100vh;
-    background: #121213;
+    background: #e1dffb;
     display: grid;
     place-items: center;
 }
 
 header{
     position: relative;
-    width: 85%;
-    height: 95%;
+    width: 98%;
+    height: 98%;
     /* border: 1px solid #fff; */
     display: flex;
     flex-wrap: wrap;
     overflow: hidden;
 }
 
-header .menu_side , 
-.song_side{
+header .menu_side {
     width: 25%;
     height: 90%;
+    padding-right: 15px;
     /* border: 1px solid #fff; */
-    background: #111727;
-    box-shadow: 5px 0px 2px #090f1f;
+    background: #B3ACED;
+    box-shadow: 5px 0px 2px #948dfd;
     color: #fff;
 }
 
 header .song_side {
     width: 75%;
-    background: #0b1320;
+    background: linear-gradient(to bottom right, #B3ACED, #e1dffb);
+    height: 90%;
+    /* border: 1px solid #fff; */
+    color: #fff;
 }
 
 header .master_play{
     width: 100%;
     height: 10%;
     /* border: 1px solid #fff; */
-    background: #111727;
-    box-shadow: 0px 3px 8px #2e1952;
+    background: #B3ACED;
+    box-shadow: 0px 3px 8px #595598;
 }
 
 header .menu_side h1 {
-    font-size: 20px;
+    /* text-align: right; */
+    font-size: 25px;
     margin: 15px 0px 0px 20px;
     font-weight: 500;
 }
@@ -59,8 +65,9 @@ header .menu_side .playlist {
 }
 
 header .menu_side .playlist h4 {
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 400;
+    text-align: right;
     padding-bottom: 10px;
     color: #62537a;
     cursor: pointer;
@@ -362,7 +369,7 @@ header .master_play .vol {
     width: 100px;
     height: 2px;
     background: rgb(105, 105, 170, .1);
-    margin-left: 50px;
+    margin-left: 150px;
 }
 
 header .master_play .vol .bi {
@@ -424,8 +431,7 @@ header .song_side::before {
     content: '';
     position: absolute;
     width: 100%;
-    height: 300px;
-    background: url('bg.png');
+    height:275px;
     z-index: -1;
 }
 
@@ -544,7 +550,8 @@ header .song_side nav .search .search_results .card .content .subtitle{
 
 header .song_side nav .search .bi{
     font-size: 13px;
-    padding: 3px 0px 0px 10px;
+    padding-left: 30px;
+    padding-right: 63px;
 }
 
 header .song_side nav .search input{
@@ -601,7 +608,7 @@ header .song_side .content .buttons button{
     border: 2px solid #5e62a1;
     outline: none;
     border-radius: 20px;
-    background: #a15fd4;
+    background: #8f86dc;
     color: #fff;
     cursor: pointer;
     transition: .3s linear;
@@ -619,7 +626,7 @@ header .song_side .content .buttons button:nth-child(2){
 }
 
 header .song_side .content .buttons button:nth-child(2):hover{
-    background: #a15fd4;
+    background: #8f86dc;
     color: #fff;
 }
 
@@ -780,7 +787,9 @@ header .left_bx1,
     width: 65%;
     height: 100%;
     /* border: 1px solid #fff; */
-    background: #0b1320;
+    background: linear-gradient(rgba(39,11,96,0.5), rgba(39,11,96,0.5)),url(./login.png) center;
+    background-repeat: none;
+    background-size: cover;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -817,8 +826,8 @@ header .left_bx1 .con .con_card label {
 header .left_bx1 .con .con_card input {
     width: 100%;
     padding: 6px 10px;
-    border: 1px solid rgb(154, 154, 154);
-    background: rgb(238, 238, 238);
+    border: 1px solid #B3ACED;
+    background: #e1dffb;
     margin-top: 5px;
 }
 
@@ -826,7 +835,7 @@ header .left_bx1 .con .submit {
     margin-top: 30px;
     padding: 8px 20px;
     color: #fff;
-    background: #111727;
+    background: #B3ACED;
     width: 100%;
     cursor: pointer;
 }
@@ -851,13 +860,13 @@ header .left_bx1 .con p{
 
 header .left_bx1 .con p a{
     text-decoration: none;
-    color: #b696bf;
+    color: #B3ACED;
     font-weight: bold;
 }
 
 header .right_bx1 h3{
     position: absolute;
-    background: #b78bd8;
+    background: #B3ACED;
     color: #000;
     right: 0;
     bottom: 20px;
@@ -865,3 +874,32 @@ header .right_bx1 h3{
     border-radius: 5px 0px 0px 5px;
     font-size: 13px;
 }
+
+.particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 9999;
+    width: 100%;
+    height: 100%;
+}
+
+.star {
+    position: absolute;
+    color: rgba(255, 255, 255, 0.7); 
+    font-size: 16px; 
+    animation: particle 5s infinite;
+}
+
+@keyframes particle {
+    0% {
+        transform: translate(0, 0);
+        opacity: 0.7;
+    }
+    100% {
+        transform: translate(100px, 100px); 
+        opacity: 0;
+    }
+}
+

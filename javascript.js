@@ -1,3 +1,24 @@
+
+    document.addEventListener("DOMContentLoaded", function () {
+        const particlesContainer = document.querySelector(".particles");
+
+        document.addEventListener("mousemove", (e) => {
+            const star = document.createElement("i");
+            star.className = "bi bi-stars star"; 
+            star.style.left = e.pageX + "px";
+            star.style.top = e.pageY + "px";
+            particlesContainer.appendChild(star);
+
+            // Remove the star after the animation ends
+            star.addEventListener("animationiteration", () => {
+                particlesContainer.removeChild(star);
+            });
+        });
+    });
+
+
+
+
 const music = new Audio('audio/1.mp3');
 // music.play();
 
